@@ -1,13 +1,21 @@
 import React from 'react';
 
 
-const CoolButton=({Class, Name})=>{
+const CoolButton=({isSmall, isDanger, className, isSuccess, children}) => {
+    const classNameString = `
+        button
+        ${className}
+        ${isSmall ? 'is-small' : ''}
+        ${isDanger ? 'is-danger' : ''}
+        ${isSuccess ? 'is-success' : ''}
+    `
     return (
-        <div> 
-            <button className={Class}>{Name}</button>
-        </div> 
+            <button className={classNameString}>
+                {children}
+            </button>
+         
     )
-}
+};
 
 
 export default CoolButton
